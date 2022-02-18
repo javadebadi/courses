@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Installation</title>
+        
+<base href="/">
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<!-- Vendor CSS Files -->
+  
+  <link href="/courses/static/course/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/courses/static/course/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/courses/static/course/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/courses/static/course/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/courses/static/course/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/courses/static/course/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/courses/static/course/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="/courses/static/course/css/onepagestyle.css" rel="stylesheet">
+  
+
+
+  
+
+
+
+        
+        <link rel="stylesheet" href="/courses/static/course/css/style.css">
+        
+    </head>
+    <body>
+         <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      
+      <h1 class="logo"><a href="/courses/">Courses</a></h1>
+      
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="{% static 'course/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          
+          <li><a class="nav-link scrollto active" href="/courses/">Home</a></li>
+          
+          
+          
+          <li><a class="nv-link scrollto" href="/courses/#services">Courses</a></li>
+          
+          
+          <li><a class="getstarted scrollto" href="https://javadebadi.github.io/">Javad Ebadi Home</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+        <nav class="sidebar">
+            <ul>
+                
+                <li class="course-title"><a href="/courses/django"><i class="bx bxl-django"></i>Django</a></li>
+                                
+                
+                <li>
+                    
+                        
+                        <a href="/courses/django/lessons/installation" class="current">
+                        
+                    
+                        Installation
+                    </a>
+                </li>
+                
+                <li>
+                    
+                        
+                        <a href="/courses/django/lessons/django-settings" class="">
+                        
+                    
+                        Django Settings
+                    </a>
+                </li>
+                
+                <li>
+                    
+                        
+                        <a href="/courses/django/lessons/templates" class="">
+                        
+                    
+                        Templates
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+        <article class="content">
+            
+<h1>Installation</h1>
+            <p>In this section, you will find information about what you need to do before starting to develop codes with Django.</p>
+            <h2>Install Python</h2>
+            <p>Django is a web framework written In Python. Therefore, the first thing you need to do is to install Python in your system. In order to install Python, click <a href="https://www.python.org/downloads/">here</a> and use website guidelines to install Python in your system. Make sure to add the Python in your system path during Installation (there is a checkbox which you need to mark it to add the Python to system paths). In addition, make sure to install <b>pip</b> during Python installation.</p>
+            <h2>Install Git (Git-Bash)</h2>
+            <p>You need command line tools to work with Python and Django. We will use bash as our shell language. In addition, you need to install Git in your system. Visit <a href="https://git-scm.com/">here</a> to install Git in Linux or Git-bash if you are a Windows OS user.</p>
+            <p>In these tutorials we use Windows OS and git-bash. However, the commands are similar in all Operating Systems.</p>
+            <h2>Install Text Editor</h2>
+            <p>We will used <a href="https://code.visualstudio.com/">VS Code</a> to develop our codes. VS code is a free open source text editor which is available in all Operating Systems. It has many extensions to develop Python, HTML, CSS and etc. In addition, it has an integrated terminal and you can access to git-bash or other terminal wihtout leaving the editor environment.</p>
+            <h2>Virtual environment</h2>
+            <p>In order to develop a django project, we will create a virtual environment everytime we start a new project. Virtual environment is a tool by which you install your libraries without polluting your other environment.</p>
+            <h3>Create Virtual environment</h3>
+            <p>Open <b>Git-bash</b> (or cmd or powershell) to create a Python virtual environment as follows:</p>
+            <div class="code git-bash">
+                <code class="bash">
+                    <div class="bash-line"><span class="bash-ps1">javad@DESKTOP-2GOSU3N</span><span class="bash-ps2"> MINGW64</span><span class="bash-pwd"> ~</span></div>
+                    <div class="bash-line"><span clas="bash-prompt">$ </span><span>mkdir first_django_project</span></div>
+                    <div class="bash-line"><p></p></div>
+                    <div class="bash-line"><span class="bash-ps1">javad@DESKTOP-2GOSU3N</span><span class="bash-ps2"> MINGW64</span><span class="bash-pwd"> ~</span></div>
+                    <div class="bash-line"><span clas="bash-prompt">$ </span><span>cd first_django_project</span></div>
+                    <div class="bash-line"><p></p></div>
+                    <div class="bash-line"><span class="bash-ps1">javad@DESKTOP-2GOSU3N</span><span class="bash-ps2"> MINGW64</span><span class="bash-pwd"> ~/first_django_project</span></div>
+                    <div class="bash-line"><span clas="bash-prompt">$ </span><span>python -m venv .venv</span></div>
+                </code>
+            </div>
+            <p>The first line generates a directory named <span class="inline-code">first_django_project</span>. Then, we open this directory. Inside the directory, we run <span class="inline-code">python -m venv .venv</span> which creates the virtual environment in a directory named <span class="inline-code">.venv</span>. The structure of directories is shown in the below image:</p>
+            <figure class="img-block">
+                <img width="40%" alt="directory structure" src="https://javadebadi.github.io/courses/media/course/django/dir_venv.svg">
+                <figcaption>Fig.1 - Directory structure after creating virtual environment.</figcaption>
+            </figure>
+            <h3>Activate Virtual Environment</h3>
+            <p>After you create the virtual envorinment, you need to activate it to install and import libraries. Inside the <span class="inline-code">.venv</span> directory, there must be three folders: <span class="inline-code">Lib</span>, <span class="inline-code">Include</span>, and <span class="inline-code">Scripts</span> or <span class="inline-code">bin</span>. In order to activate virtual environment, type the following:</p>
+            <div class="code git-bash">
+                <code class="bash">
+                    <div class="bash-line"><span class="bash-ps1">javad@DESKTOP-2GOSU3N</span><span class="bash-ps2"> MINGW64</span><span class="bash-pwd"> ~/first_django_project</span></div>
+                    <div class="bash-line"><span clas="bash-prompt">$ </span><span>source .venv/Scripts/activate</span></div>
+                    <div class="bash-line"><span>(.venv)</span></div>
+                    <div class="bash-line"><span class="bash-ps1">javad@DESKTOP-2GOSU3N</span><span class="bash-ps2"> MINGW64</span><span class="bash-pwd"> ~/first_django_project</span></div>
+                    <div class="bash-line"><span clas="bash-prompt">$ </span></div>
+                </code>
+            </div>
+            <p>The first line in above code activates the virtual environment. After that, you must see the <span class="inline-code">(.venv)</span> above all prompt lines in the git-bash terminal.</p>
+            <h2>Install Django</h2>
+            <p>Now, that you have setup the virtual environment and activated it, it's time to install django. When you install a library in virtual environment it will be installed inside <span class="inline-code">.venv/Lib/site-packages</span> directory.</p>
+            <p>To install django in your virtual environment write:</p>
+            <div class="code git-bash">
+                <code class="bash">
+                    <div class="bash-line"><span>(.venv)</span></div>
+                    <div class="bash-line"><span class="bash-ps1">javad@DESKTOP-2GOSU3N</span><span class="bash-ps2"> MINGW64</span><span class="bash-pwd"> ~/first_django_project</span></div>
+                    <div class="bash-line"><span clas="bash-prompt">$ python -m pip install django</span></div>
+                </code>
+            </div>
+            <p>Afther installation is done, you can find the Django source code inside <span class="inline-code">.venv/Lib/site-packages/django</span> directory. Now, run the following to see the version of Django in your virtual envoironment:</p>
+            <div class="code git-bash">
+                <code class="bash">
+                    <div class="bash-line"><span>(.venv)</span></div>
+                    <div class="bash-line"><span class="bash-ps1">javad@DESKTOP-2GOSU3N</span><span class="bash-ps2"> MINGW64</span><span class="bash-pwd"> ~/first_django_project</span></div>
+                    <div class="bash-line"><span clas="bash-prompt">$ django-admin --version</span></div>
+                    <div class="bash-line"><span>4.0</span></div>
+                </code>
+            </div>
+            <p>For the version of Django is 4.0. What is the version of your Django?</p>.
+            <h2>Initialize Git</h2>
+            <p>In order to keep track our changes in codes will use Git. To initailize Git in this directory, execute <span class="inline-code">git init</span>. This commands will create <span class="inline-code">.git</span> directroy and setup git database to keep track of changes in your source code.</p>
+            <div class="code git-bash">
+                <code class="bash">
+                    <div class="bash-line"><span>(.venv)</span></div>
+                    <div class="bash-line"><span class="bash-ps1">javad@DESKTOP-2GOSU3N</span><span class="bash-ps2"> MINGW64</span><span class="bash-pwd"> ~/first_django_project</span></div>
+                    <div class="bash-line"><span clas="bash-prompt">$ git init</span></div>
+                    <div class="bash-line"><span clas="bash-prompt">Initialized empty Git repository in C:/Users/javad/first_django_project/.git/</span></div>
+                </code>
+            </div>
+            <p>Now, wee need to add a <span class="inline-code">.gitignore</span> file in the directory to determine which kind of files or directories should not be tracked by Git. The virtual environment files should not be tracked since they are not part of our code, we just need to keep the information about version of libraries we have used in our source code. In order to do that, we use <span class="inline-code">pip freeze &gt requirements.txt</span>.</p>
+            <p>Next we create <span class="inline-code">.gitignore</span> file and add the files and directories which needs to be ignored by Git:</p>
+            <figure class="img-code-block">
+                <div class="code">
+                    <code>
+                        <p class="code-line-left">.venv/</p>
+                        <p class="code-line-left">__pycache__/</p>
+                        <p class="code-line-left">*.pyc</p>
+                    </code>
+                </div>
+                <figcaption>Fig.2 - Add these lines to <span class="inline-code">.gitignore</span> file.</figcaption>
+            </figure>
+            <p>Strcute of directories after these commands will look like this:</p>
+            <figure class="img-block">
+                <img width="60%" alt="directory structure (git)" src="https://javadebadi.github.io/courses/media/course/django/dir_git.svg">
+                <figcaption>Fig.3 - Directory structure after initializing git repo. The black boxes shows the content of each file. None that the content of your <span class="inline-code">requirements.txt</span> may be different than the one shown in this figure.</figcaption>
+            </figure>
+            <p>Next, we create our first commit in Git repository</p>
+            <div class="code git-bash">
+                <code class="bash">
+                    <div class="bash-line"><span>(.venv)</span></div>
+                    <div class="bash-line"><span class="bash-ps1">javad@DESKTOP-2GOSU3N</span><span class="bash-ps2"> MINGW64</span><span class="bash-pwd"> ~/first_django_project</span></div>
+                    <div class="bash-line"><span clas="bash-prompt">$ git add -A</span></div>
+                    <div class="bash-line"><span clas="bash-prompt">$ git commit -m "created virtual environment and initialized git repo"</span></div>
+                </code>
+            </div>
+            <h2>Video Lecture</h2>
+            <p>You can watch the video lecture for this lesson (The language of the video is Farsi)</p>
+            <div class="youtube-video">
+                <iframe width="800" height="480" src="https://www.youtube.com/embed/i5CZ5GemrKE">
+                </iframe>
+            </div>
+            <h2>Summary</h2>
+            <p>Congratulations! You have just finished installing django and initializing a Git repo for your project. In the next section, we are going to create our first django project.</p>
+            <p></p>
+
+        </article>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    
+    <link rel="stylesheet" href="/courses/static/course/js/script.js">
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    </body>
+</html>
