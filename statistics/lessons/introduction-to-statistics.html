@@ -14,15 +14,14 @@
 
 
 <!-- Vendor CSS Files -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
-  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/swiper@6/swiper-bundle.min.css">
-
   
   <link href="/courses/static/course/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/courses/static/course/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/courses/static/course/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/courses/static/course/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/courses/static/course/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/courses/static/course/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/courses/static/course/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <!-- Template Main CSS File -->
   <link href="/courses/static/course/css/onepagestyle.css" rel="stylesheet">
   
@@ -86,6 +85,26 @@
                 <li>
                     
                         
+                        <a href="/courses/statistics/lessons/measure-of-center" class="">
+                        
+                    
+                        Measure of Center
+                    </a>
+                </li>
+                
+                <li>
+                    
+                        
+                        <a href="/courses/statistics/lessons/measure-of-spread" class="">
+                        
+                    
+                        Measure of Spread
+                    </a>
+                </li>
+                
+                <li>
+                    
+                        
                         <a href="/courses/statistics/lessons/probability" class="">
                         
                     
@@ -96,10 +115,10 @@
                 <li>
                     
                         
-                        <a href="/courses/statistics/lessons/other" class="">
+                        <a href="/courses/statistics/lessons/random-variables" class="">
                         
                     
-                        other
+                        Random Variables
                     </a>
                 </li>
                 
@@ -107,93 +126,10 @@
         </nav>
         <article class="content">
             
-<h1>Introduction to Statistics</h1>
-
+<h1>Introduction To Statistics</h1>
 <p>According to <a href="https://en.wikipedia.org/wiki/Statistics">Wikipedia</a> Statistics is the discipline that concerns the collection, organization, analysis, interpretation, and presentation of data.</p>
 
-<h2>Measures of Center</h2>
-<p>
-Sometimes we need measures to answer questions like <em><strong>What is the typical value of a quantity?</strong></em>. There are well know metrics to answer this kind of questions which are called <strong>measures of center</strong>. These measures are as follow:
-<ul>
-<li><a>Mean</a></li>
-<li><a>Median</a></li>
-<li><a>Mode</a></li>
-</ul>
-</p>
-
-
-
-
-<h3 id="mean"> Mean </h3>
-<p>
-The Mean of a quantity is defined as the sum of the values of that quantity in all observations divided by the total number of observations. This is sometimes called <strong>sample mean</strong>.
-</p>
-<ul class="formula">
-<li>\(N\): total number of observations (number of records in the dataset)</li>
-<li>\(x_{i}\): the value of quantity \(x\) for \(i\)th observation</li>
-<li>$$\bar{x} = \frac{x_1 + x_2 + \dots + x_N }{N}.$$</li>
-</ul>
-
-<p>Here is an example of how to find the mean in <it>numpy</it></p>
-<div class="wcode">
-<code>
-<pre>
-<span class="ki">import</span> numpy <span class="ki">as</span> np
-height <span class="o">=</span> [<span class="ln">165</span>, <span class="ln">170</span>, <span class="ln">175</span>, <span class="ln">180</span>, <span class="ln">185</span>, <span class="ln">190</span>, <span class="ln">195</span>]
-np.mean(height)
-</pre>
-</code>
-</div>
-
-<h3 id="median"> Median</h3>
-<p>
-The Median of a quantity is defined as the middle value among all gathered observations. In order to find the median, we to the follwing:
-</p>
-<ul class="formula">
-<li>\(N\): total number of observations (number of records in the dataset)</li>
-<li>\(x_{i}\): the value of quantity \(x\) for \(i\)th observation</li>
-<li>\(y_{j}\): the sorted collection of \(x\)s for all observations</li>
-<li>$$\rm{median} =  y_{\frac{N}{2}} $$</li>
-</ul>
-<p>Note that the above formula is not exact but I think you can guess the exact formula depending on whether the \(N\) is odd or even.
-</p>
-
-<p>Here is an example of how to find the median in <it>numpy</it></p>
-<div class="wcode">
-<code>
-<pre>
-<span class="ki">import</span> numpy <span class="ki">as</span> np
-height <span class="o">=</span> [<span class="ln">175</span>, <span class="ln">185</span>, <span class="ln">165</span>, <span class="ln">180</span>, <span class="ln">170</span>, <span class="ln">190</span>, <span class="ln">195</span>]
-np.median(height)
-</pre>
-</code>
-</div>
-<p>Note that numpy's <span class="inline-code">median</span> function automatically sorts the data and you don't need to pass sorted data to it to find the median.</p>
-
-
-<h3 id="mode"> Mode</h3>
-<p>
-The mode is the value that is the most frequent in the dataset. For a discrete variable, this is well defined. For a continuous variable, to find the mode, we need to plot a histogram of that variable and the bin with the highest height is the mode of that variable on a given dataset.
-</p>
-
-
-
-
-
-
-<div class="example">
-<h4>Example: Wealth Distribution</h4>
-<p>Imagine a "Fake Earth" which is in a "Fake Galaxy" and there are people who work and gather assets. Their total asset or wealth is shown in the following figure:
-</p>
-<figure>
-<img src="https://javadebadi.github.io/statistics-material/measure-of-center/wealth.svg" alt="wealth distribution">
-</figure>
-<p>
-Most of the people in Fake Earth are poor and few of them are extremely rich. Suppose you want to answer this question: <b>What is the typical wealth of people living in Fake Earth?</b>. At first, you may think of mean, but as you see in the plot the median looks a better indicator of the wealth of people. The reason for this is that the mean is much more sensitive to outliers than the median. Elon Musk's wealth impact in the mean is much greater than its impact on the median because it is a huge number but Elon Musk is just one person.
-</p>
-</div>
-
-<p></p>
+<p>In this course, we learn about statistics and probability.</p>
 
         </article>
 

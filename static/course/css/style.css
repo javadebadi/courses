@@ -104,7 +104,7 @@ section {
 } */ */
 
 body {
-    line-height: 1.2;
+    line-height: 1.4;
 }
 
 ol {
@@ -115,6 +115,10 @@ ol {
 ul {
     padding-left: 60px;
     list-style: disc;
+}
+
+ul.itemize li {
+    padding-right: 100px;
 }
 
 ul a {
@@ -279,14 +283,17 @@ ul.formula {
 .example figure img {
     display: block;
     width: 100%;
+    padding: 0px 10px;
 }
-
+.example img {
+    border-radius: 5%;
+}
 
 
 .content {
     padding-top: 67px;
     font-size: 1.2rem;
-    line-height: 1.4;
+    line-height: 2rem;
 }
 
 .content {
@@ -319,7 +326,7 @@ ul.formula {
 
 .content p {
     font-size: 1.2rem;
-    padding: 0px 10px 10px 20px;
+    padding: 0px 50px 1px 20px;
 }
 
 .content ol {
