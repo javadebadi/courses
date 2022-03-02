@@ -509,20 +509,27 @@ small .content h1 {
     list-style-type: disc;
 }
 
+span.block-formula {
+    display: block;
+    padding: 2px;
+    text-align: center;
+}
+
 
 /* styles for python codes in white background */
-.wcode {
+.wcode pre{
     background: #f3eff7;
     max-width: 80%;
     margin: 5px auto;
     padding: 5px;
     text-align: left;
-    font: 1.2rem 'Source Code Pro',
+    font: 1rem 'Source Code Pro',
     Consolas,
     'Courier New',
     Courier,
     monospace;
-    line-height: 1.2;
+    line-height: 1.4;
+    color:black;
 }
 
 /* python keywords import, as, from */
