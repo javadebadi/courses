@@ -395,8 +395,14 @@ small .content h1 {
 
 .inline-code {
     font-family: 0.9rem 'Source Code Pro', Consolas, 'Courier New', Courier, monospace;
+    /* display: inline-block; */
     display: inline-block;
-    background-color: #DDD;
+    background-color: #E5E5E5;
+    padding: 0;
+    margin: 0;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 4px;
 }
 
 .bash-line {
