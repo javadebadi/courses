@@ -177,6 +177,46 @@ The <strong>Survival Function</strong> of a random variable \(X\) is defined as 
 <figure id="cdf-plot" class="plot">
 </figure>
 
+<h2 id="cdf-normal">Normal Distribution CDF and Survival</h2>
+<p>
+Normal distribution is used to model random variables which have continuoues outcome.
+There are a lot of phenomena which roughly has distribution. For example,
+the height or weight of students in a school has this distribution.
+Mathematically, this distribution is
+
+<span class="block-formula">
+\(
+\rm{Normal(\mu, \sigma)}(X = x) = \frac{1}{\sqrt{2\pi} \sigma} e^{- \frac{(x-\mu)^2}{2\sigma^2}}
+\)
+</span>
+
+where \(\mu\) and \(\sigma\) are the population mean and standard deviation.
+The normal distribtion with  \(\mu\)=0 and  \(\sigma\) is called the <strong>Standard Normal Distribution</strong>.
+</p>
+
+<p>
+In python, we can use <span class="inline-code">scipy.stats</span> to get PMF, CDF or simulate data for various probability distributions.
+In the following code, we use <span class="inline-code">scipy.stats</span> to find CDF and survival of standard normal distribution.
+Can you guess what are <span class="inline-code">loc</span> and <span class="inline-code">scale</span> parameters in this code?
+</p> 
+
+<div class="wcode">
+<code>
+<pre>
+<span class="ki">import</span> numpy <span class="ki">as</span> np
+<span class="ki">from</span> scipy.stats <span class="ki">import</span> norm
+
+<span class="comment"># find CDF of standard normal distribution for x=0</span>
+cdf_value <span class="o">=</span> norm.cdf(x<span class="o">=</span><span class="ln">0</span>, loc<span class="o">=</span><span class="ln">0</span>, scale<span class="o">=</span><span class="ln">1</span>)
+<span class="comment"># the cdf_value would be 0.5</span>
+
+<span class="comment"># find survivale of standard normal distribution for x=2</span>
+survival <span class="o">=</span> <span class="ln">1</span> <span class="o">-</span> norm.cdf(x<span class="o">=</span><span class="ln">3</span>, loc<span class="o">=</span><span class="ln">0</span>, scale<span class="o">=</span><span class="ln">1</span>)
+<span class="comment"># Survival would be 0.001</span>
+</pre>
+</code>
+</div>
+
 
 <script>
 // functions to generate normal distribution data points
