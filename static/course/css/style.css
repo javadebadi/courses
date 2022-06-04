@@ -317,15 +317,15 @@ ul.formula {
 }
 
 .content h1 {
-    font-size: 3rem;
-}
-
-.content h2 {
     font-size: 2rem;
 }
 
+.content h2 {
+    font-size: 1.5rem;
+}
+
 .content p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 0px 50px 1px 20px;
 }
 
@@ -558,6 +558,14 @@ span.block-formula {
     color: #0055aa; /* parantheses or brackets */
 }
 
+.plot {
+    align-items: center;
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
 
 /* colors
 FFD5CD

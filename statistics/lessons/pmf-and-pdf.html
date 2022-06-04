@@ -25,6 +25,9 @@
   <!-- Template Main CSS File -->
   <link href="/courses/static/course/css/onepagestyle.css" rel="stylesheet">
   
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.4.4/d3.min.js"
+        integrity="sha512-hnFpvCiJ8Fr1lYLqcw6wLgFUOEZ89kWCkO+cEekwcWPIPKyknKV1eZmSSG3UxXfsSuf+z/SgmiYB1zFOg3l2UQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
   
@@ -132,11 +135,23 @@
                     </a>
                 </li>
                 
+                <li>
+                    
+                        
+                        <a href="/courses/statistics/lessons/cdf-and-survival-function" class="">
+                        
+                    
+                        CDF and Survival Function
+                    </a>
+                </li>
+                
             </ul>
         </nav>
         <article class="content">
             
-<h1>Pmf And Pdf</h1>
+<h1>
+PMF and PDF
+</h1>
 <p>
 Probability Mass Function (PMF) and Probability Density Function (PDF) are tools to model the probabilities of random variables. The PMF is used for discrete random variables and the PDF is used for continuous random variables.
 </p>
@@ -147,7 +162,7 @@ Bernoulli distribution is used to model random variables which can have 2 outcom
 
 <span class="block-formula">
 \(
-\rm{Bernolli}(X = x) = p^{x} (1 - p)^{1-x}
+\rm{Bernoulli}(X = x) = p^{x} (1 - p)^{1-x}
 \)
 </span>
 
@@ -158,7 +173,7 @@ where \(p\) is the probability of success.
 For example, for a <b>fair coin</b> the probability of heads and tails is equal therefore, \(p=1/2\) and the PMF is:
 <span class="block-formula">
 \(
-\rm{Bernolli}(\text{tossing a fair coin} = x) = (\frac{1}{2})^{x} (\frac{1}{2})^{1-x} = \frac{1}{2}
+\rm{Bernoulli}(\text{tossing a fair coin} = x) = (\frac{1}{2})^{x} (\frac{1}{2})^{1-x} = \frac{1}{2}
 \)
 </span>
 
