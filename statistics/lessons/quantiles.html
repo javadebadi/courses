@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>CDF and Survival Function</title>
+        <title>Quantiles</title>
         
 <base href="/">
 
@@ -138,7 +138,7 @@
                 <li>
                     
                         
-                        <a href="/courses/statistics/lessons/cdf-and-survival-function" class="current">
+                        <a href="/courses/statistics/lessons/cdf-and-survival-function" class="">
                         
                     
                         CDF and Survival Function
@@ -148,7 +148,7 @@
                 <li>
                     
                         
-                        <a href="/courses/statistics/lessons/quantiles" class="">
+                        <a href="/courses/statistics/lessons/quantiles" class="current">
                         
                     
                         Quantiles
@@ -160,55 +160,46 @@
         <article class="content">
             
 <h1>
-CDF and Survival Function
+Quantiles
 </h1>
-<p>
-In the previous section, we talked about Probability Density Function (PDF) which roughly is the probability of each outcome to occur.
-The Cumulative Distribution Function (CDF) is a concept that determines the probability of occurrence of all outcomes which are smaller than a given value.
-</p>
 <h2>Formal Definition</h2>
 <p>
-The <strong>Cumulative Distribution Function</strong> (CDF) of a random variable \(X\) is defined as the function
-    <span class="block-formula">
-    \(
-        F(X = x) = P(X \leq x)
-    \)
-    </span>
-</p>
-<p>
-The <strong>Survival Function</strong> of a random variable \(X\) is defined as the function
-    <span class="block-formula">
-    \(
-        S(X = x) = P(X > x) = 1 - F(X = x)
-    \)
-    </span>
-</p>
-
-<figure id="cdf-plot" class="plot">
-</figure>
-
-<h2 id="cdf-normal">Normal Distribution CDF and Survival</h2>
-<p>
-Normal distribution is used to model random variables which have a continuous outcome.
-There are a lot of phenomena that roughly have distribution. For example,
-the height or weight of students in a school has this distribution.
-Mathematically, this distribution is
-
+The \(\alpha^{\rm{th}}\) <strong>quantile</strong> 
+is defined as the point \(x_{\alpha}\) in distribution  
+for which the CDF of the distribution equals to \(\alpha\).
 <span class="block-formula">
 \(
-\rm{Normal(\mu, \sigma)}(X = x) = \frac{1}{\sqrt{2\pi} \sigma} e^{- \frac{(x-\mu)^2}{2\sigma^2}}
+F(x_{\alpha}) = \alpha
 \)
 </span>
-
-where \(\mu\) and \(\sigma\) are the population mean and standard deviation.
-The normal distribtion with  \(\mu\)=0 and  \(\sigma\) is called the <strong>Standard Normal Distribution</strong>.
+<p>
+The <strong>percentile</strong> is the quantile experessed as a precent.
+</p>
+<p>
+The <strong>median</strong> is the \(0.5^{\rm{th}}\) quantile or  \(50^{\rm{th}}\) percentile.
+</p>
+<p>
+   Note that the quantile here is the property of the probability distribution, not the sampled data points. To distinguish
+   between this and the sample quantile, we may call the quantile defined here as the <strong>population quantile</strong>.
 </p>
 
+
+
+<h2 id="cdf-normal">Quantiles of the Standard Normal Distribution</h2>
 <p>
-In python, we can use <span class="inline-code">scipy.stats</span> to get PMF, CDF or simulate data for various probability distributions.
-In the following code, we use <span class="inline-code">scipy.stats</span> to find CDF and survival of standard normal distribution.
+   In the following chart, the \(0.85\) quantile or \(85\) percentile of the standard normal distribution is illustrated.
+</p>
+
+<div id="quantile-plot" class="plot">
+</div>
+
+<h2>In Code</h2>
+<p>
+In python, we can use the <span class="inline-code">ppf</span> method of PDFs of <span class="inline-code">scipy.stats</span> module to calculate quantiles of probability distribution.s
+In the following code, we use <span class="inline-code">scipy.stats.norm.ppf</span> to find the given quantiles of standard normal distribution.
 Can you guess what are <span class="inline-code">loc</span> and <span class="inline-code">scale</span> parameters in this code?
 </p> 
+
 
 <div class="wcode">
 <code>
@@ -216,16 +207,17 @@ Can you guess what are <span class="inline-code">loc</span> and <span class="inl
 <span class="ki">import</span> numpy <span class="ki">as</span> np
 <span class="ki">from</span> scipy.stats <span class="ki">import</span> norm
 
-<span class="comment"># find CDF of standard normal distribution for x=0</span>
-cdf_value <span class="o">=</span> norm.cdf(x<span class="o">=</span><span class="ln">0</span>, loc<span class="o">=</span><span class="ln">0</span>, scale<span class="o">=</span><span class="ln">1</span>)
-<span class="comment"># the cdf_value would be 0.5</span>
+<span class="comment"># find percentiles of standard normal distribution</span>
+norm.ppf([<span class="ln">0.001</span>, <span class="ln">0.0456</span>, <span class="ln">0.16</span>, <span class="ln">0.5</span>, <span class="ln">0.84</span>, <span class="ln">0.954</span>, <span class="ln">0.999</span>], loc<span class="o">=</span><span class="ln">0</span>, scale<span class="o">=</span><span class="ln">1</span>)
 
-<span class="comment"># find survivale of standard normal distribution for x=2</span>
-survival <span class="o">=</span> <span class="ln">1</span> <span class="o">-</span> norm.cdf(x<span class="o">=</span><span class="ln">3</span>, loc<span class="o">=</span><span class="ln">0</span>, scale<span class="o">=</span><span class="ln">1</span>)
-<span class="comment"># Survival would be 0.001</span>
+<span class="comment"># the quantiles will be calculated as follows</span>
+<span class="comment"># array([-3.09023231, -1.6891014 , -0.99445788,  0.        ,  0.99445788, 1.68494077,  3.09023231])</span>
+
 </pre>
 </code>
 </div>
+
+
 
 
 <script>
@@ -264,7 +256,7 @@ const pointNum = 500; // number of poinst to generate
 const xMin = -4;
 const xMax = 4;
 const xMinCDF = xMin;
-const xMaxCDF = 0.5;
+const xMaxCDF = 0.994;
 const xDomain = xMax - xMin;
 
 
@@ -293,7 +285,7 @@ const yScale = d3.scaleLinear(
 )
 
 // create svg element with determined width and hight
-const svg = d3.select("#cdf-plot")
+const svg = d3.select("#quantile-plot")
    .append("svg")
    .attr("width", w)
    .attr("height", h)
@@ -306,7 +298,7 @@ svg.append('text')
    .attr('text-anchor', 'middle')
    .style('font-family', 'Comic Sans MS')
    .style('font-size', 24)
-   .text('Standard Normal Distribution PDF, CDF and Surival');
+   .text('84 th Percentile of Standard Normal Distribution is 0.994');
 
 // X label
 svg.append('text')
@@ -362,25 +354,31 @@ svg.append("path")
    .style("stroke", "none")
    .style("stroke-width", "0");
 
+svg.append("path")
+   .datum([[xMaxCDF, 0], [xMaxCDF, d3.max(dataset1, (d) => d[1])]])
+   .attr("class", "line")
+   .attr("d", line)
+   .style("fill", "magenta")
+   .style("opacity", "0.6")
+   .style("stroke", "magenta")
+   .style("stroke-width", "5");
+
 // add texts
 svg.append("text")
-   .attr("x", 0.42 * w)
+   .attr("x", 0.4 * w)
    .attr("y", h / 2)
-   .text("F(X=1)")
+   .text("F(x_84) = 0.84")
    .style("font-family", "Comic Sans MS")
-   .style('font-size', 22)
+   .style('font-size', 16)
 
 svg.append("text")
-   .attr("x", 0.57 * w)
-   .attr("y", 0.75 * h)
-   .text("S(X=1)")
+   .attr("x", 0.63 * w)
+   .attr("y", 0.25* h)
+   .text("x_84 = 0.994")
    .style("font-family", "Comic Sans MS")
-   .style('font-size', 22)
-</script>
-
-
-<p>
-</p>
+   .style('font-size', 16)
+   .style('fill', 'magenta')
+</script>
 
         </article>
 

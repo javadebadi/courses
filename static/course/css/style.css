@@ -294,9 +294,6 @@ ul.formula {
     padding-top: 67px;
     font-size: 1.2rem;
     line-height: 2rem;
-}
-
-.content {
     width: 80%;
     min-height: 100vh;
     background-color: #fffdfd;
@@ -395,7 +392,6 @@ small .content h1 {
 
 .inline-code {
     font-family: 0.9rem 'Source Code Pro', Consolas, 'Courier New', Courier, monospace;
-    /* display: inline-block; */
     display: inline-block;
     background-color: #E5E5E5;
     padding: 0;
